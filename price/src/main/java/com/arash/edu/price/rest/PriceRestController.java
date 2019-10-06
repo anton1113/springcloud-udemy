@@ -7,7 +7,6 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.*;
 
 @RequiredArgsConstructor
-@RequestMapping(value = "/priceapi")
 @RestController
 public class PriceRestController implements PricesRestControllerApi {
 
