@@ -1,24 +1,24 @@
-package com.arash.edu.coupon.controllers;
+package com.arash.edu.coupon.rest;
 
+import com.arash.edu.coupon.api.CouponRestControllerApi;
 import com.arash.edu.coupon.model.Coupon;
 import com.arash.edu.coupon.repository.CouponRepository;
 import lombok.RequiredArgsConstructor;
-import org.springframework.web.bind.annotation.*;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RestController;
 
 @RequiredArgsConstructor
-@RequestMapping("/couponapi")
 @RestController
-public class CouponRestController {
+public class CouponRestController implements CouponRestControllerApi {
 
     private final CouponRepository couponRepository;
 
-    @RequestMapping(value = "/coupons", method = RequestMethod.POST)
     public Coupon create(@RequestBody Coupon coupon) {
         couponRepository.save(coupon);
         return coupon;
     }
 
-    @RequestMapping(value = "/coupons/{code}", method = RequestMethod.GET)
     public Coupon get(@PathVariable String code) {
         return couponRepository.findByCode(code);
     }

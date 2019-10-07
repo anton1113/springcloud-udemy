@@ -1,5 +1,6 @@
 package com.arash.edu.ticket.services;
 
+import com.arash.edu.price.model.FooPriceDto;
 import com.arash.edu.price.model.Price;
 import com.arash.edu.ticket.feign.PricesRestControllerProxy;
 import lombok.RequiredArgsConstructor;
@@ -16,5 +17,9 @@ public class TicketsService {
     public BigDecimal getTicketsPrices(int ticketsCount) {
         Price price = pricesRestControllerProxy.fetch();
         return price.getPrice().multiply(new BigDecimal(ticketsCount));
+    }
+
+    public FooPriceDto foo() {
+        return pricesRestControllerProxy.foo();
     }
 }

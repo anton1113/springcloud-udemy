@@ -1,5 +1,6 @@
 package com.arash.edu.price.api;
 
+import com.arash.edu.price.model.FooPriceDto;
 import com.arash.edu.price.model.Price;
 import com.arash.edu.price.paths.PriceServicePath;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -13,4 +14,7 @@ public interface PricesRestControllerApi {
 
     @RequestMapping(value = PriceServicePath.PRICE_FETCH, method = RequestMethod.GET)
     Price fetch();
+
+    @RequestMapping(value = "/foo", method = RequestMethod.GET)
+    FooPriceDto foo();
 }

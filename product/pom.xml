@@ -55,6 +55,11 @@
             <version>2.1.3.RELEASE</version>
         </dependency>
 
+        <dependency>
+            <groupId>com.arash.edu</groupId>
+            <artifactId>coupon-api</artifactId>
+            <version>1.0-SNAPSHOT</version>
+        </dependency>
     </dependencies>
 
     <build>

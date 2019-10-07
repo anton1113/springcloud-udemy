@@ -1,5 +1,6 @@
 package com.arash.edu.price.rest;
 
+import com.arash.edu.price.model.FooPriceDto;
 import com.arash.edu.price.repository.PriceRepository;
 import com.arash.edu.price.api.PricesRestControllerApi;
 import com.arash.edu.price.model.Price;
@@ -18,5 +19,9 @@ public class PriceRestController implements PricesRestControllerApi {
 
     public Price fetch() {
         return priceRepository.findAll().get(0);
+    }
+
+    public FooPriceDto foo() {
+        return FooPriceDto.mock();
     }
 }

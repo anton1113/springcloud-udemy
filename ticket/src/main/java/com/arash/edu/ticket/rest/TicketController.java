@@ -1,5 +1,6 @@
 package com.arash.edu.ticket.rest;
 
+import com.arash.edu.price.model.FooPriceDto;
 import com.arash.edu.ticket.services.TicketsService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -19,5 +20,10 @@ public class TicketController {
     @RequestMapping(value = "/tickets/price/{numberOfTickets}", method = RequestMethod.GET)
     public BigDecimal computePrices(@PathVariable int numberOfTickets) {
         return ticketsService.getTicketsPrices(numberOfTickets);
+    }
+
+    @RequestMapping(value = "/foo", method = RequestMethod.GET)
+    public FooPriceDto foo() {
+        return ticketsService.foo();
     }
 }
